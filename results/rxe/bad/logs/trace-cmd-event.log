@@ -1,0 +1,122 @@
+     kworker/1:1-80    [001] .....    86.959450: smb3_waitff_credits:  conn_id=0x1 server=192.168.45.10 current_mid=20 credits=0 credit_change=-1 in_flight=1
+     kworker/1:1-80    [001] .....    86.959454: smb3_cmd_enter:       sid=0x0 tid=0x0 cmd=13 mid=20
+   kworker/u10:3-354   [001] dL.2.    86.959498: cq_schedule:          cq.id=1
+   kworker/u10:3-354   [001] dL.2.    86.959510: cq_schedule:          cq.id=2
+     ksoftirqd/1-25    [001] ..s..    86.959593: cq_process:           cq.id=1 wake-up took 94 [us] from interrupt
+     ksoftirqd/1-25    [001] ..s..    86.959594: cq_poll:              cq.id=1 requested 16, returned 1
+     ksoftirqd/1-25    [001] .Ls..    86.959739: cq_process:           cq.id=2 wake-up took 228 [us] from interrupt
+     ksoftirqd/1-25    [001] .Ls..    86.959740: cq_poll:              cq.id=2 requested 16, returned 16
+     ksoftirqd/1-25    [001] .Ls..    86.959839: cq_poll:              cq.id=2 requested 16, returned 16
+     ksoftirqd/1-25    [001] .Ls..    86.959926: cq_poll:              cq.id=2 requested 16, returned 16
+     ksoftirqd/1-25    [001] .Ls..    86.960012: cq_poll:              cq.id=2 requested 16, returned 16
+     ksoftirqd/1-25    [001] .Ls..    86.960083: cq_poll:              cq.id=2 requested 16, returned 16
+     ksoftirqd/1-25    [001] .Ls..    86.960152: cq_poll:              cq.id=2 requested 16, returned 16
+     ksoftirqd/1-25    [001] .Ls..    86.960223: cq_poll:              cq.id=2 requested 16, returned 16
+     ksoftirqd/1-25    [001] .Ls..    86.960293: cq_poll:              cq.id=2 requested 16, returned 16
+     ksoftirqd/1-25    [001] .Ls..    86.960363: cq_poll:              cq.id=2 requested 16, returned 16
+     ksoftirqd/1-25    [001] .Ns..    86.960488: cq_poll:              cq.id=2 requested 16, returned 16
+   kworker/u13:0-90    [000] .....    86.960520: cm_disconnect:        cm.id=0 src=192.168.45.20:47442 dst=192.168.45.10:445 tos=0
+   kworker/u13:0-90    [000] d..1.    86.960548: icm_send_drep_err:    local_id=1122984900 remote_id=4158411632 state=TIMEWAIT lap_state=LAP_UNINIT
+     ksoftirqd/1-25    [001] .Ns..    86.960561: cq_poll:              cq.id=2 requested 16, returned 16
+           cifsd-1726  [000] ...1.    86.960601: smb3_reconnect:       conn_id=0x1 server=192.168.45.10 current_mid=21
+     ksoftirqd/1-25    [001] .Ns..    86.960633: cq_poll:              cq.id=2 requested 16, returned 16
+     ksoftirqd/1-25    [001] .Ns..    86.960713: cq_poll:              cq.id=2 requested 16, returned 16
+     ksoftirqd/1-25    [001] .Ns..    86.960789: cq_poll:              cq.id=2 requested 16, returned 16
+     ksoftirqd/1-25    [001] .Ns..    86.960860: cq_poll:              cq.id=2 requested 16, returned 16
+     ksoftirqd/1-25    [001] .Ns..    86.960931: cq_poll:              cq.id=2 requested 16, returned 15
+   kworker/u10:4-355   [001] d..1.   149.406390: cq_schedule:          cq.id=0
+   kworker/u13:1-1725  [001] .....   149.406416: cq_process:           cq.id=0 wake-up took 25 [us] from interrupt
+   kworker/u13:1-1725  [001] .....   149.406417: cq_poll:              cq.id=0 requested 16, returned 1
+   kworker/u13:1-1725  [001] .....   149.406419: ib_mad_recv_done_handler: 0:1 QP1 : RECV WC Status 0 : length 296 : hdr : base_ver 0x01 class 0x07 class_ver 0x02 method 0x03 status 0x0000 class_specific 0x0000 tid 0x000000027053dcf7 attr_id 0x0015 attr_mod 0x00000000 slid 0x00000000 src QP1, sl 0
+   kworker/u13:1-1725  [001] .....   149.406422: ib_mad_recv_done_agent: 0:1 mad agent : hi_tid 0x00000002 class 0x07 class_ver 0x02
+     kworker/1:1-80    [001] d..1.   149.406444: icm_dreq_unknown_err: local_id=1122984900 remote_id=4158411632 state=IDLE lap_state=LAP_UNINIT
+   kworker/u10:4-355   [001] d..1.   153.566351: cq_schedule:          cq.id=0
+   kworker/u13:1-1725  [001] .....   153.566378: cq_process:           cq.id=0 wake-up took 25 [us] from interrupt
+   kworker/u13:1-1725  [001] .....   153.566380: cq_poll:              cq.id=0 requested 16, returned 1
+   kworker/u13:1-1725  [001] .....   153.566381: ib_mad_recv_done_handler: 0:1 QP1 : RECV WC Status 0 : length 296 : hdr : base_ver 0x01 class 0x07 class_ver 0x02 method 0x03 status 0x0000 class_specific 0x0000 tid 0x000000027053dcf7 attr_id 0x0015 attr_mod 0x00000000 slid 0x00000000 src QP1, sl 0
+   kworker/u13:1-1725  [001] .....   153.566384: ib_mad_recv_done_agent: 0:1 mad agent : hi_tid 0x00000002 class 0x07 class_ver 0x02
+     kworker/1:1-80    [001] d..1.   153.566404: icm_dreq_unknown_err: local_id=1122984900 remote_id=4158411632 state=IDLE lap_state=LAP_UNINIT
+   kworker/u10:4-355   [001] d..1.   158.174332: cq_schedule:          cq.id=0
+   kworker/u13:1-1725  [001] .....   158.174357: cq_process:           cq.id=0 wake-up took 24 [us] from interrupt
+   kworker/u13:1-1725  [001] .....   158.174359: cq_poll:              cq.id=0 requested 16, returned 1
+   kworker/u13:1-1725  [001] .....   158.174360: ib_mad_recv_done_handler: 0:1 QP1 : RECV WC Status 0 : length 296 : hdr : base_ver 0x01 class 0x07 class_ver 0x02 method 0x03 status 0x0000 class_specific 0x0000 tid 0x000000027053dcf7 attr_id 0x0015 attr_mod 0x00000000 slid 0x00000000 src QP1, sl 0
+   kworker/u13:1-1725  [001] .....   158.174363: ib_mad_recv_done_agent: 0:1 mad agent : hi_tid 0x00000002 class 0x07 class_ver 0x02
+     kworker/1:1-80    [001] d..1.   158.174385: icm_dreq_unknown_err: local_id=1122984900 remote_id=4158411632 state=IDLE lap_state=LAP_UNINIT
+   kworker/u10:4-355   [001] d..1.   162.782357: cq_schedule:          cq.id=0
+   kworker/u13:1-1725  [001] .....   162.782379: cq_process:           cq.id=0 wake-up took 21 [us] from interrupt
+   kworker/u13:1-1725  [001] .....   162.782380: cq_poll:              cq.id=0 requested 16, returned 1
+   kworker/u13:1-1725  [001] .....   162.782382: ib_mad_recv_done_handler: 0:1 QP1 : RECV WC Status 0 : length 296 : hdr : base_ver 0x01 class 0x07 class_ver 0x02 method 0x03 status 0x0000 class_specific 0x0000 tid 0x000000027053dcf7 attr_id 0x0015 attr_mod 0x00000000 slid 0x00000000 src QP1, sl 0
+   kworker/u13:1-1725  [001] .....   162.782394: ib_mad_recv_done_agent: 0:1 mad agent : hi_tid 0x00000002 class 0x07 class_ver 0x02
+     kworker/1:1-80    [001] d..1.   162.782412: icm_dreq_unknown_err: local_id=1122984900 remote_id=4158411632 state=IDLE lap_state=LAP_UNINIT
+   kworker/u10:3-354   [001] d..1.   167.390463: cq_schedule:          cq.id=0
+   kworker/u13:1-1725  [001] .....   167.390488: cq_process:           cq.id=0 wake-up took 24 [us] from interrupt
+   kworker/u13:1-1725  [001] .....   167.390490: cq_poll:              cq.id=0 requested 16, returned 1
+   kworker/u13:1-1725  [001] .....   167.390492: ib_mad_recv_done_handler: 0:1 QP1 : RECV WC Status 0 : length 296 : hdr : base_ver 0x01 class 0x07 class_ver 0x02 method 0x03 status 0x0000 class_specific 0x0000 tid 0x000000027053dcf7 attr_id 0x0015 attr_mod 0x00000000 slid 0x00000000 src QP1, sl 0
+   kworker/u13:1-1725  [001] .....   167.390494: ib_mad_recv_done_agent: 0:1 mad agent : hi_tid 0x00000002 class 0x07 class_ver 0x02
+     kworker/1:1-80    [001] d..1.   167.390542: icm_dreq_unknown_err: local_id=1122984900 remote_id=4158411632 state=IDLE lap_state=LAP_UNINIT
+   kworker/u10:4-355   [001] d..1.   171.998530: cq_schedule:          cq.id=0
+   kworker/u13:1-1725  [001] .....   171.998556: cq_process:           cq.id=0 wake-up took 25 [us] from interrupt
+   kworker/u13:1-1725  [001] .....   171.998558: cq_poll:              cq.id=0 requested 16, returned 1
+   kworker/u13:1-1725  [001] .....   171.998560: ib_mad_recv_done_handler: 0:1 QP1 : RECV WC Status 0 : length 296 : hdr : base_ver 0x01 class 0x07 class_ver 0x02 method 0x03 status 0x0000 class_specific 0x0000 tid 0x000000027053dcf7 attr_id 0x0015 attr_mod 0x00000000 slid 0x00000000 src QP1, sl 0
+   kworker/u13:1-1725  [001] .....   171.998562: ib_mad_recv_done_agent: 0:1 mad agent : hi_tid 0x00000002 class 0x07 class_ver 0x02
+     kworker/1:1-80    [001] d..1.   171.998584: icm_dreq_unknown_err: local_id=1122984900 remote_id=4158411632 state=IDLE lap_state=LAP_UNINIT
+   kworker/u10:4-355   [001] d..1.   176.606579: cq_schedule:          cq.id=0
+   kworker/u13:1-1725  [001] .....   176.606608: cq_process:           cq.id=0 wake-up took 29 [us] from interrupt
+   kworker/u13:1-1725  [001] .....   176.606611: cq_poll:              cq.id=0 requested 16, returned 1
+   kworker/u13:1-1725  [001] .....   176.606613: ib_mad_recv_done_handler: 0:1 QP1 : RECV WC Status 0 : length 296 : hdr : base_ver 0x01 class 0x07 class_ver 0x02 method 0x03 status 0x0000 class_specific 0x0000 tid 0x000000027053dcf7 attr_id 0x0015 attr_mod 0x00000000 slid 0x00000000 src QP1, sl 0
+   kworker/u13:1-1725  [001] .....   176.606616: ib_mad_recv_done_agent: 0:1 mad agent : hi_tid 0x00000002 class 0x07 class_ver 0x02
+     kworker/1:2-81    [001] d..1.   176.606638: icm_dreq_unknown_err: local_id=1122984900 remote_id=4158411632 state=IDLE lap_state=LAP_UNINIT
+   kworker/u10:4-355   [001] d..1.   181.214670: cq_schedule:          cq.id=0
+   kworker/u13:1-1725  [001] .....   181.214696: cq_process:           cq.id=0 wake-up took 25 [us] from interrupt
+   kworker/u13:1-1725  [001] .....   181.214698: cq_poll:              cq.id=0 requested 16, returned 1
+   kworker/u13:1-1725  [001] .....   181.214700: ib_mad_recv_done_handler: 0:1 QP1 : RECV WC Status 0 : length 296 : hdr : base_ver 0x01 class 0x07 class_ver 0x02 method 0x03 status 0x0000 class_specific 0x0000 tid 0x000000027053dcf7 attr_id 0x0015 attr_mod 0x00000000 slid 0x00000000 src QP1, sl 0
+   kworker/u13:1-1725  [001] .....   181.214702: ib_mad_recv_done_agent: 0:1 mad agent : hi_tid 0x00000002 class 0x07 class_ver 0x02
+     kworker/1:1-80    [001] d..1.   181.214724: icm_dreq_unknown_err: local_id=1122984900 remote_id=4158411632 state=IDLE lap_state=LAP_UNINIT
+   kworker/u10:4-355   [001] d..1.   185.822706: cq_schedule:          cq.id=0
+   kworker/u13:1-1725  [001] .....   185.822735: cq_process:           cq.id=0 wake-up took 28 [us] from interrupt
+   kworker/u13:1-1725  [001] .....   185.822738: cq_poll:              cq.id=0 requested 16, returned 1
+   kworker/u13:1-1725  [001] .....   185.822739: ib_mad_recv_done_handler: 0:1 QP1 : RECV WC Status 0 : length 296 : hdr : base_ver 0x01 class 0x07 class_ver 0x02 method 0x03 status 0x0000 class_specific 0x0000 tid 0x000000027053dcf7 attr_id 0x0015 attr_mod 0x00000000 slid 0x00000000 src QP1, sl 0
+   kworker/u13:1-1725  [001] .....   185.822742: ib_mad_recv_done_agent: 0:1 mad agent : hi_tid 0x00000002 class 0x07 class_ver 0x02
+     kworker/1:1-80    [001] d..1.   185.822765: icm_dreq_unknown_err: local_id=1122984900 remote_id=4158411632 state=IDLE lap_state=LAP_UNINIT
+   kworker/u10:3-354   [001] d..1.   190.430802: cq_schedule:          cq.id=0
+   kworker/u13:1-1725  [001] .....   190.430828: cq_process:           cq.id=0 wake-up took 25 [us] from interrupt
+   kworker/u13:1-1725  [001] .....   190.430829: cq_poll:              cq.id=0 requested 16, returned 1
+   kworker/u13:1-1725  [001] .....   190.430831: ib_mad_recv_done_handler: 0:1 QP1 : RECV WC Status 0 : length 296 : hdr : base_ver 0x01 class 0x07 class_ver 0x02 method 0x03 status 0x0000 class_specific 0x0000 tid 0x000000027053dcf7 attr_id 0x0015 attr_mod 0x00000000 slid 0x00000000 src QP1, sl 0
+   kworker/u13:1-1725  [001] .....   190.430834: ib_mad_recv_done_agent: 0:1 mad agent : hi_tid 0x00000002 class 0x07 class_ver 0x02
+     kworker/1:1-80    [001] d..1.   190.430855: icm_dreq_unknown_err: local_id=1122984900 remote_id=4158411632 state=IDLE lap_state=LAP_UNINIT
+   kworker/u10:3-354   [001] d..1.   195.038801: cq_schedule:          cq.id=0
+   kworker/u13:1-1725  [001] .....   195.038827: cq_process:           cq.id=0 wake-up took 24 [us] from interrupt
+   kworker/u13:1-1725  [001] .....   195.038828: cq_poll:              cq.id=0 requested 16, returned 1
+   kworker/u13:1-1725  [001] .....   195.038829: ib_mad_recv_done_handler: 0:1 QP1 : RECV WC Status 0 : length 296 : hdr : base_ver 0x01 class 0x07 class_ver 0x02 method 0x03 status 0x0000 class_specific 0x0000 tid 0x000000027053dcf7 attr_id 0x0015 attr_mod 0x00000000 slid 0x00000000 src QP1, sl 0
+   kworker/u13:1-1725  [001] .....   195.038831: ib_mad_recv_done_agent: 0:1 mad agent : hi_tid 0x00000002 class 0x07 class_ver 0x02
+     kworker/1:1-80    [001] d..1.   195.038852: icm_dreq_unknown_err: local_id=1122984900 remote_id=4158411632 state=IDLE lap_state=LAP_UNINIT
+   kworker/u10:4-355   [001] d..1.   199.646891: cq_schedule:          cq.id=0
+   kworker/u13:1-1725  [001] .....   199.646916: cq_process:           cq.id=0 wake-up took 25 [us] from interrupt
+   kworker/u13:1-1725  [001] .....   199.646918: cq_poll:              cq.id=0 requested 16, returned 1
+   kworker/u13:1-1725  [001] .....   199.646920: ib_mad_recv_done_handler: 0:1 QP1 : RECV WC Status 0 : length 296 : hdr : base_ver 0x01 class 0x07 class_ver 0x02 method 0x03 status 0x0000 class_specific 0x0000 tid 0x000000027053dcf7 attr_id 0x0015 attr_mod 0x00000000 slid 0x00000000 src QP1, sl 0
+   kworker/u13:1-1725  [001] .....   199.646922: ib_mad_recv_done_agent: 0:1 mad agent : hi_tid 0x00000002 class 0x07 class_ver 0x02
+     kworker/1:1-80    [001] d..1.   199.646944: icm_dreq_unknown_err: local_id=1122984900 remote_id=4158411632 state=IDLE lap_state=LAP_UNINIT
+   kworker/u10:4-355   [001] d..1.   204.254987: cq_schedule:          cq.id=0
+   kworker/u13:1-1725  [001] .....   204.255012: cq_process:           cq.id=0 wake-up took 24 [us] from interrupt
+   kworker/u13:1-1725  [001] .....   204.255013: cq_poll:              cq.id=0 requested 16, returned 1
+   kworker/u13:1-1725  [001] .....   204.255015: ib_mad_recv_done_handler: 0:1 QP1 : RECV WC Status 0 : length 296 : hdr : base_ver 0x01 class 0x07 class_ver 0x02 method 0x03 status 0x0000 class_specific 0x0000 tid 0x000000027053dcf7 attr_id 0x0015 attr_mod 0x00000000 slid 0x00000000 src QP1, sl 0
+   kworker/u13:1-1725  [001] .....   204.255018: ib_mad_recv_done_agent: 0:1 mad agent : hi_tid 0x00000002 class 0x07 class_ver 0x02
+     kworker/1:1-80    [001] d..1.   204.255039: icm_dreq_unknown_err: local_id=1122984900 remote_id=4158411632 state=IDLE lap_state=LAP_UNINIT
+   kworker/u10:3-354   [001] d..1.   208.862984: cq_schedule:          cq.id=0
+   kworker/u13:1-1725  [001] .....   208.863006: cq_process:           cq.id=0 wake-up took 20 [us] from interrupt
+   kworker/u13:1-1725  [001] .....   208.863007: cq_poll:              cq.id=0 requested 16, returned 1
+   kworker/u13:1-1725  [001] .....   208.863008: ib_mad_recv_done_handler: 0:1 QP1 : RECV WC Status 0 : length 296 : hdr : base_ver 0x01 class 0x07 class_ver 0x02 method 0x03 status 0x0000 class_specific 0x0000 tid 0x000000027053dcf7 attr_id 0x0015 attr_mod 0x00000000 slid 0x00000000 src QP1, sl 0
+   kworker/u13:1-1725  [001] .....   208.863011: ib_mad_recv_done_agent: 0:1 mad agent : hi_tid 0x00000002 class 0x07 class_ver 0x02
+     kworker/1:1-80    [001] d..1.   208.863029: icm_dreq_unknown_err: local_id=1122984900 remote_id=4158411632 state=IDLE lap_state=LAP_UNINIT
+   kworker/u10:4-355   [001] d..1.   213.471046: cq_schedule:          cq.id=0
+   kworker/u13:1-1725  [001] .....   213.471071: cq_process:           cq.id=0 wake-up took 24 [us] from interrupt
+   kworker/u13:1-1725  [001] .....   213.471072: cq_poll:              cq.id=0 requested 16, returned 1
+   kworker/u13:1-1725  [001] .....   213.471074: ib_mad_recv_done_handler: 0:1 QP1 : RECV WC Status 0 : length 296 : hdr : base_ver 0x01 class 0x07 class_ver 0x02 method 0x03 status 0x0000 class_specific 0x0000 tid 0x000000027053dcf7 attr_id 0x0015 attr_mod 0x00000000 slid 0x00000000 src QP1, sl 0
+   kworker/u13:1-1725  [001] .....   213.471077: ib_mad_recv_done_agent: 0:1 mad agent : hi_tid 0x00000002 class 0x07 class_ver 0x02
+     kworker/1:1-80    [001] d..1.   213.471098: icm_dreq_unknown_err: local_id=1122984900 remote_id=4158411632 state=IDLE lap_state=LAP_UNINIT
+   kworker/u10:3-354   [001] d..1.   218.079150: cq_schedule:          cq.id=0
+   kworker/u13:1-1725  [001] .....   218.079176: cq_process:           cq.id=0 wake-up took 25 [us] from interrupt
+   kworker/u13:1-1725  [001] .....   218.079178: cq_poll:              cq.id=0 requested 16, returned 1
+   kworker/u13:1-1725  [001] .....   218.079180: ib_mad_recv_done_handler: 0:1 QP1 : RECV WC Status 0 : length 296 : hdr : base_ver 0x01 class 0x07 class_ver 0x02 method 0x03 status 0x0000 class_specific 0x0000 tid 0x000000027053dcf7 attr_id 0x0015 attr_mod 0x00000000 slid 0x00000000 src QP1, sl 0
+   kworker/u13:1-1725  [001] .....   218.079182: ib_mad_recv_done_agent: 0:1 mad agent : hi_tid 0x00000002 class 0x07 class_ver 0x02
+     kworker/1:1-80    [001] d..1.   218.079204: icm_dreq_unknown_err: local_id=1122984900 remote_id=4158411632 state=IDLE lap_state=LAP_UNINIT

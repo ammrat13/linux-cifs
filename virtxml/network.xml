@@ -1,0 +1,14 @@
+<network>
+  <name>linux-cifs</name>
+  <uuid>e9aea2f9-c499-4696-8e75-45435a08b008</uuid>
+  <forward mode='nat'>
+    <nat>
+      <port start='1024' end='65535'/>
+    </nat>
+  </forward>
+  <bridge name='linuxcifsbr0' stp='on' delay='0'/>
+  <mac address='52:54:00:f0:46:e7'/>
+  <ip address='192.168.45.1' netmask='255.255.255.0'>
+  </ip>
+</network>
+

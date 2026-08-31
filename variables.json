@@ -1,0 +1,11 @@
+{
+  "vm_username": "linux-cifs-user",
+  "vm_hostname_prefix": "linux-cifs-",
+
+  "host_address": "192.168.45.1/24",
+  "server_address": "192.168.45.10/24",
+  "client_address": "192.168.45.20/24",
+
+  "vm_interface": "enp16s0",
+  "server_share": "linux-cifs"
+}

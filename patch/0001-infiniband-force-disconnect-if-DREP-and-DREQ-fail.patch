@@ -1,0 +1,96 @@
+From f3faebbecb6a36a457ccb4582aaa121ba9b8d6d7 Mon Sep 17 00:00:00 2001
+From: Ammar Ratnani <ammrat13@gmail.com>
+Date: Fri, 4 Sep 2026 23:32:14 -0700
+Subject: [PATCH 1/2] infiniband: force disconnect if DREP and DREQ fail
+Cc: Ammar Ratnani <aratnani@nvidia.com>
+Cc: Kechen Lu <kechenl@nvidia.com>
+Cc: Mithun Maragiri <mmaragiri@nvidia.com>
+Cc: linux-kernel@vger.kernel.org
+
+When we call `rdma_disconnect`, it's possible that we fail to send both
+a DREQ and a DREP. In that case, we currently either do nothing or move
+into the `IB_CM_TIMEWAIT` state. Either way, we remain in the
+`RDMA_CM_CONNECT` state. Anyone waiting for us to disconnect hangs.
+
+Instead, while we're connected, when we call `rdma_disconnect`, and fail
+to send both a DREQ and a DREP, mark the connection as disconnected.
+Call the upper layer's handler for the disconnect, and destroy the
+connection if instructed.
+
+Cc: Leon Romanovsky <leon@kernel.org>
+Cc: Jason Gunthorpe <jgg@ziepe.ca>
+Cc: Namjae Jeon <linkinjeon@kernel.org>
+Cc: Paulo Alcantara <pc@manguebit.org>
+Cc: Stefan Metzmacher <metze@samba.org>
+Cc: Tom Talpey <tom@talpey.com>
+Cc: linux-rdma@vger.kernel.org
+Cc: linux-cifs@vger.kernel.org
+Cc: samba-technical@lists.samba.org
+Cc: linux-kernel@vger.kernel.org
+Signed-off-by: Ammar Ratnani <ammrat13@gmail.com>
+---
+ drivers/infiniband/core/cma.c | 39 +++++++++++++++++++++++++++++++----
+ 1 file changed, 35 insertions(+), 4 deletions(-)
+
+diff --git a/drivers/infiniband/core/cma.c b/drivers/infiniband/core/cma.c
+index 73170b15fc3d..1f1a8b4e160a 100644
+--- a/drivers/infiniband/core/cma.c
++++ b/drivers/infiniband/core/cma.c
+@@ -4823,6 +4823,34 @@ int rdma_reject(struct rdma_cm_id *id, const void *private_data,
+ }
+ EXPORT_SYMBOL(rdma_reject);
+ 
++/*
++ * Called from rdma_disconnect() when we know we're not receiving a callback.
++ * Emulate what that callback (in cma_ib_handler()) would have done.
++ *
++ * NOTE: Despite the name, this function will only actually disconnect when
++ * we're in the RDMA_CM_CONNECT state. Else, it does nothing.
++ */
++static int cma_force_disconnect(struct rdma_id_private *id_priv)
++{
++	struct cma_work *work;
++
++	work = kzalloc_obj(*work);
++	if (!work)
++		return -ENOMEM;
++
++	INIT_WORK(&work->work, cma_work_handler);
++	work->old_state = RDMA_CM_CONNECT;
++	work->new_state = RDMA_CM_DISCONNECT;
++	work->event.event = RDMA_CM_EVENT_DISCONNECTED;
++	work->event.status = -ECONNABORTED;
++
++	cma_id_get(id_priv);
++	work->id = id_priv;
++
++	queue_work(cma_wq, &work->work);
++	return 0;
++}
++
+ int rdma_disconnect(struct rdma_cm_id *id)
+ {
+ 	struct rdma_id_private *id_priv;
+@@ -4838,12 +4866,15 @@ int rdma_disconnect(struct rdma_cm_id *id)
+ 			goto out;
+ 		/* Initiate or respond to a disconnect. */
+ 		trace_cm_disconnect(id_priv);
+-		if (ib_send_cm_dreq(id_priv->cm_id.ib, NULL, 0)) {
+-			if (!ib_send_cm_drep(id_priv->cm_id.ib, NULL, 0))
+-				trace_cm_sent_drep(id_priv);
+-		} else {
++		if (!ib_send_cm_dreq(id_priv->cm_id.ib, NULL, 0)) {
+ 			trace_cm_sent_dreq(id_priv);
++			goto out;
++		}
++		if (!ib_send_cm_drep(id_priv->cm_id.ib, NULL, 0)) {
++			trace_cm_sent_drep(id_priv);
++			goto out;
+ 		}
++		ret = cma_force_disconnect(id_priv);
+ 	} else if (rdma_cap_iw_cm(id->device, id->port_num)) {
+ 		ret = iw_cm_disconnect(id_priv->cm_id.iw, 0);
+ 	} else
+-- 
+2.55.0
+

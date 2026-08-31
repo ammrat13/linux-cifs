@@ -1,0 +1,13 @@
+network:
+  version: 2
+  ethernets:
+    {{ vm_interface }}:
+      dhcp4: false
+      addresses:
+        - "{{ vm_address }}"
+      nameservers:
+        addresses:
+          - "{{ host_address.split('/')[0] }}"
+      routes:
+        - to: default
+          via: "{{ host_address.split('/')[0] }}"

@@ -1,0 +1,241 @@
+     kworker/0:4-589   [000] .....    78.249561: smb3_waitff_credits:  conn_id=0x1 server=192.168.45.10 current_mid=20 credits=0 credit_change=-1 in_flight=1
+     kworker/0:4-589   [000] .....    78.249565: smb3_cmd_enter:       sid=0x0 tid=0x0 cmd=13 mid=20
+    kworker/u9:5-356   [000] d..2.    78.249604: cq_schedule:          cq.id=1
+    kworker/u9:5-356   [000] d..2.    78.249613: cq_schedule:          cq.id=2
+     ksoftirqd/0-14    [000] ..s..    78.249696: cq_process:           cq.id=1 wake-up took 92 [us] from interrupt
+     ksoftirqd/0-14    [000] ..s..    78.249698: cq_poll:              cq.id=1 requested 16, returned 1
+     ksoftirqd/0-14    [000] .Ls..    78.249817: cq_process:           cq.id=2 wake-up took 203 [us] from interrupt
+     ksoftirqd/0-14    [000] .Ls..    78.249817: cq_poll:              cq.id=2 requested 16, returned 16
+     ksoftirqd/0-14    [000] .Ls..    78.249888: cq_poll:              cq.id=2 requested 16, returned 16
+     ksoftirqd/0-14    [000] .Ls..    78.249965: cq_poll:              cq.id=2 requested 16, returned 16
+     ksoftirqd/0-14    [000] .Ls..    78.250035: cq_poll:              cq.id=2 requested 16, returned 16
+     ksoftirqd/0-14    [000] .Ls..    78.250105: cq_poll:              cq.id=2 requested 16, returned 16
+     ksoftirqd/0-14    [000] .Ls..    78.250174: cq_poll:              cq.id=2 requested 16, returned 16
+     ksoftirqd/0-14    [000] .Ls..    78.250244: cq_poll:              cq.id=2 requested 16, returned 16
+     ksoftirqd/0-14    [000] .Ls..    78.250314: cq_poll:              cq.id=2 requested 16, returned 16
+     ksoftirqd/0-14    [000] .Ls..    78.250384: cq_poll:              cq.id=2 requested 16, returned 16
+     ksoftirqd/0-14    [000] .Ls..    78.250454: cq_poll:              cq.id=2 requested 16, returned 16
+     ksoftirqd/0-14    [000] .Ns..    78.250563: cq_poll:              cq.id=2 requested 16, returned 16
+     ksoftirqd/0-14    [000] .Ns..    78.250633: cq_poll:              cq.id=2 requested 16, returned 16
+     ksoftirqd/0-14    [000] .Ns..    78.250703: cq_poll:              cq.id=2 requested 16, returned 16
+     ksoftirqd/0-14    [000] .Ns..    78.250774: cq_poll:              cq.id=2 requested 16, returned 16
+     ksoftirqd/0-14    [000] .Ns..    78.250844: cq_poll:              cq.id=2 requested 16, returned 16
+     ksoftirqd/0-14    [000] .Ns..    78.250919: cq_poll:              cq.id=2 requested 16, returned 15
+   kworker/u12:0-89    [000] .....    78.251047: cm_disconnect:        cm.id=0 src=192.168.45.20:42529 dst=192.168.45.10:445 tos=0
+   kworker/u12:0-89    [000] d..1.    78.251072: icm_send_drep_err:    local_id=930853330 remote_id=3110182651 state=TIMEWAIT lap_state=LAP_UNINIT
+   kworker/u12:0-89    [000] .....    78.251074: cm_force_disconnect:  cm.id=0 src=192.168.45.20:42529 dst=192.168.45.10:445 tos=0
+    kworker/u8:0-12    [000] .....    78.251234: cm_event_handler:     cm.id=0 src=192.168.45.20:42529 dst=192.168.45.10:445 tos=0 DISCONNECTED (10/-103)
+    kworker/u9:4-355   [000] d..2.    78.251323: cq_schedule:          cq.id=1
+           cifsd-1610  [001] ...1.    78.251351: smb3_reconnect:       conn_id=0x1 server=192.168.45.10 current_mid=21
+ systemd-journal-552   [000] ..s..    78.251468: cq_process:           cq.id=1 wake-up took 145 [us] from interrupt
+ systemd-journal-552   [000] ..s..    78.251469: cq_poll:              cq.id=1 requested 16, returned 1
+    kworker/u8:0-12    [000] .....    78.252124: cq_drain_complete:    cq.id=1
+    kworker/u9:5-356   [000] d..2.    78.252152: cq_schedule:          cq.id=2
+     ksoftirqd/0-14    [000] ..s..    78.252183: cq_process:           cq.id=2 wake-up took 30 [us] from interrupt
+     ksoftirqd/0-14    [000] ..s..    78.252184: cq_poll:              cq.id=2 requested 16, returned 1
+    kworker/u8:0-12    [000] .....    78.252195: cq_drain_complete:    cq.id=2
+    kworker/u8:0-12    [000] .....    78.252196: cm_event_done:        cm.id=0 src=192.168.45.20:42529 dst=192.168.45.10:445 tos=0 DISCONNECTED consumer returns 0
+   kworker/u10:3-516   [001] d..2.    78.253400: cq_schedule:          cq.id=1
+     ksoftirqd/1-25    [001] ..s..    78.253422: cq_process:           cq.id=1 wake-up took 21 [us] from interrupt
+     ksoftirqd/1-25    [001] ..s..    78.253422: cq_poll:              cq.id=1 requested 16, returned 1
+           cifsd-1610  [001] .....    78.253440: cq_drain_complete:    cq.id=1
+   kworker/u10:2-94    [001] d..2.    78.253522: cq_schedule:          cq.id=2
+   kworker/u10:2-94    [001] ..s1.    78.253547: cq_process:           cq.id=2 wake-up took 24 [us] from interrupt
+   kworker/u10:2-94    [001] ..s1.    78.253547: cq_poll:              cq.id=2 requested 16, returned 1
+           cifsd-1610  [001] .....    78.253575: cq_drain_complete:    cq.id=2
+           cifsd-1610  [001] .....    78.254048: mr_dereg:             mr.id=0
+           cifsd-1610  [001] .....    78.254077: mr_dereg:             mr.id=1
+           cifsd-1610  [001] .....    78.254101: mr_dereg:             mr.id=2
+           cifsd-1610  [001] .....    78.254125: mr_dereg:             mr.id=3
+           cifsd-1610  [001] .....    78.254150: mr_dereg:             mr.id=4
+           cifsd-1610  [001] .....    78.254173: mr_dereg:             mr.id=5
+           cifsd-1610  [001] .....    78.254202: mr_dereg:             mr.id=6
+           cifsd-1610  [001] .....    78.254226: mr_dereg:             mr.id=7
+           cifsd-1610  [001] .....    78.254253: mr_dereg:             mr.id=8
+           cifsd-1610  [001] .....    78.254276: mr_dereg:             mr.id=9
+           cifsd-1610  [001] .....    78.254300: mr_dereg:             mr.id=10
+           cifsd-1610  [001] .....    78.254324: mr_dereg:             mr.id=11
+           cifsd-1610  [001] .....    78.254349: mr_dereg:             mr.id=12
+           cifsd-1610  [001] .....    78.254373: mr_dereg:             mr.id=13
+           cifsd-1610  [001] .....    78.254397: mr_dereg:             mr.id=14
+           cifsd-1610  [001] .....    78.254420: mr_dereg:             mr.id=15
+   kworker/u10:3-516   [001] d..2.    78.254561: cq_schedule:          cq.id=1
+     ksoftirqd/1-25    [001] ..s..    78.254575: cq_process:           cq.id=1 wake-up took 13 [us] from interrupt
+     ksoftirqd/1-25    [001] ..s..    78.254575: cq_poll:              cq.id=1 requested 16, returned 1
+           cifsd-1610  [001] .....    78.254591: cq_drain_complete:    cq.id=1
+   kworker/u10:2-94    [001] d..2.    78.254667: cq_schedule:          cq.id=2
+     ksoftirqd/1-25    [001] ..s..    78.254684: cq_process:           cq.id=2 wake-up took 17 [us] from interrupt
+     ksoftirqd/1-25    [001] ..s..    78.254684: cq_poll:              cq.id=2 requested 16, returned 1
+           cifsd-1610  [001] .....    78.254697: cq_drain_complete:    cq.id=2
+           cifsd-1610  [001] .....    78.254699: cm_qp_destroy:        cm.id=0 src=192.168.45.20:42529 dst=192.168.45.10:445 tos=0 qp_num=17
+           cifsd-1610  [001] .....    78.255032: cq_free:              cq.id=2
+           cifsd-1610  [001] .....    78.255105: cq_free:              cq.id=1
+           cifsd-1610  [001] .....    78.255198: cm_id_destroy:        cm.id=0 src=192.168.45.20:42529 dst=192.168.45.10:445 tos=0
+    kworker/u9:4-355   [000] .....    78.269816: cm_event_handler:     cm.id=0 src=0.0.0.0:32784 dst=192.168.45.10:5445 tos=0 ADDR_ERROR (1/-19)
+    kworker/u9:4-355   [000] .L...    78.269834: cm_event_done:        cm.id=0 src=0.0.0.0:32784 dst=192.168.45.10:5445 tos=0 ADDR_ERROR consumer returns 0
+           cifsd-1610  [000] .....    78.270038: cm_id_destroy:        cm.id=0 src=0.0.0.0:32784 dst=192.168.45.10:5445 tos=0
+    kworker/u9:4-355   [000] .....    78.270139: cm_id_attach:         cm.id=0 src=192.168.45.20:42285 dst=192.168.45.10:445 device=rxe0
+    kworker/u9:4-355   [000] .....    78.270141: cm_event_handler:     cm.id=1 src=192.168.45.20:42285 dst=192.168.45.10:445 tos=0 ADDR_RESOLVED (0/0)
+    kworker/u9:4-355   [000] .L...    78.270153: cm_event_done:        cm.id=1 src=192.168.45.20:42285 dst=192.168.45.10:445 tos=0 ADDR_RESOLVED consumer returns 0
+    kworker/u8:0-12    [000] .....    78.270163: cm_event_handler:     cm.id=1 src=192.168.45.20:42285 dst=192.168.45.10:445 tos=0 ROUTE_RESOLVED (2/0)
+    kworker/u8:0-12    [000] .....    78.270187: cq_alloc:             cq.id=3 nr_cqe=384 comp_vector=1 poll_ctx=SOFTIRQ
+    kworker/u8:0-12    [000] .....    78.270199: cq_alloc:             cq.id=4 nr_cqe=256 comp_vector=0 poll_ctx=SOFTIRQ
+    kworker/u8:0-12    [000] .....    78.270239: cm_qp_create:         cm.id=1 src=192.168.45.20:42285 dst=192.168.45.10:445 tos=0 pd.id=2 qp_type=RC send_wr=511 recv_wr=511 qp_num=18 rc=0
+    kworker/u8:0-12    [000] .....    78.270242: cm_send_req:          cm.id=1 src=192.168.45.20:42285 dst=192.168.45.10:445 tos=0 qp_num=18
+    kworker/u8:0-12    [000] d..1.    78.270250: icm_send_req:         local_id=914076114 remote_id=0 state=IDLE lap_state=LAP_UNINIT
+    kworker/u8:0-12    [000] d..2.    78.270252: ib_mad_ib_send_mad:   0:1 QP1 agent 0xffff88ff802ea200: wrtid 0x2d2b17b36; 15/15 retries(0); timeout 4608 length 256 : hdr : base_ver 0x1 class 0x7 class_ver 0x2 method 0x3 status 0x0 class_specific 0x0 tid 0x2d2b17b36 attr_id 0x10 attr_mod 0x0  => dlid 0x00000000 sl 0 rpqn 0x1 rqpkey 0x80000000
+    kworker/u8:0-12    [000] .....    78.270263: cm_event_done:        cm.id=1 src=192.168.45.20:42285 dst=192.168.45.10:445 tos=0 ROUTE_RESOLVED consumer returns 0
+    kworker/u9:4-355   [000] d..1.    78.270308: cq_schedule:          cq.id=0
+   kworker/u12:0-89    [000] .....    78.270334: cq_process:           cq.id=0 wake-up took 26 [us] from interrupt
+   kworker/u12:0-89    [000] .....    78.270335: cq_poll:              cq.id=0 requested 16, returned 1
+   kworker/u12:0-89    [000] .....    78.270336: ib_mad_send_done_agent: 0:1 mad agent : hi_tid 0x00000002 class 0x07 class_ver 0x02
+   kworker/u12:0-89    [000] .....    78.270337: ib_mad_send_done_handler: 0:1 QP1 : SEND WC Status 0 : agent 0xffff88ff802ea200: wrtid 0x2d2b17b36 15/15 retries(0) timeout 4608 length 256: hdr : base_ver 0x1 class 0x7 class_ver 0x2 method 0x3 status 0x0
+   kworker/u10:3-516   [001] d..1.    78.270786: cq_schedule:          cq.id=0
+   kworker/u13:1-1608  [001] .....    78.270810: cq_process:           cq.id=0 wake-up took 23 [us] from interrupt
+   kworker/u13:1-1608  [001] .....    78.270811: cq_poll:              cq.id=0 requested 16, returned 1
+   kworker/u13:1-1608  [001] .....    78.270812: ib_mad_recv_done_handler: 0:1 QP1 : RECV WC Status 0 : length 296 : hdr : base_ver 0x01 class 0x07 class_ver 0x02 method 0x03 status 0x0000 class_specific 0x0000 tid 0x00000002d2b17b36 attr_id 0x0013 attr_mod 0x00000000 slid 0x00000000 src QP1, sl 0
+   kworker/u13:1-1608  [001] .....    78.270814: ib_mad_recv_done_agent: 0:1 mad agent : hi_tid 0x00000002 class 0x07 class_ver 0x02
+     kworker/1:1-48    [001] .....    78.270844: cm_prepare_mra:       cm.id=1 src=192.168.45.20:42285 dst=192.168.45.10:445 tos=0
+     kworker/1:1-48    [001] .....    78.270891: cm_send_rtu:          cm.id=1 src=192.168.45.20:42285 dst=192.168.45.10:445 tos=0
+     kworker/1:1-48    [001] d..1.    78.270925: icm_send_rtu:         local_id=914076114 remote_id=3126959867 state=MRA_REP_SENT lap_state=LAP_UNINIT
+     kworker/1:1-48    [001] d..2.    78.270930: ib_mad_ib_send_mad:   0:1 QP1 agent 0xffff88ff802ea200: wrtid 0x2d2b17b36; 0/0 retries(0); timeout 0 length 256 : hdr : base_ver 0x1 class 0x7 class_ver 0x2 method 0x3 status 0x0 class_specific 0x0 tid 0x2d2b17b36 attr_id 0x14 attr_mod 0x0  => dlid 0x00000000 sl 0 rpqn 0x1 rqpkey 0x80000000
+     kworker/1:1-48    [001] .....    78.270968: cm_event_handler:     cm.id=1 src=192.168.45.20:42285 dst=192.168.45.10:445 tos=0 ESTABLISHED (9/0)
+   kworker/u10:3-516   [000] d..1.    78.271579: cq_schedule:          cq.id=0
+   kworker/u12:0-89    [000] .....    78.271605: cq_process:           cq.id=0 wake-up took 25 [us] from interrupt
+   kworker/u12:0-89    [000] .....    78.271606: cq_poll:              cq.id=0 requested 16, returned 1
+   kworker/u12:0-89    [000] .....    78.271606: ib_mad_send_done_agent: 0:1 mad agent : hi_tid 0x00000002 class 0x07 class_ver 0x02
+   kworker/u12:0-89    [000] .....    78.271606: ib_mad_send_done_handler: 0:1 QP1 : SEND WC Status 0 : agent 0xffff88ff802ea200: wrtid 0x2d2b17b36 0/0 retries(0) timeout 0 length 256: hdr : base_ver 0x1 class 0x7 class_ver 0x2 method 0x3 status 0x0
+     kworker/1:1-48    [001] .....    78.273629: cm_event_done:        cm.id=1 src=192.168.45.20:42285 dst=192.168.45.10:445 tos=0 ESTABLISHED consumer returns 0
+   kworker/u10:3-516   [001] d..1.    78.273691: cq_schedule:          cq.id=3
+     ksoftirqd/1-25    [001] ..s..    78.273711: cq_process:           cq.id=3 wake-up took 19 [us] from interrupt
+     ksoftirqd/1-25    [001] ..s..    78.273712: cq_poll:              cq.id=3 requested 16, returned 1
+   kworker/u10:3-516   [001] d..1.    78.273794: cq_schedule:          cq.id=4
+   kworker/u10:3-516   [001] .Ls1.    78.273803: cq_process:           cq.id=4 wake-up took 8 [us] from interrupt
+   kworker/u10:3-516   [001] .Ls1.    78.273803: cq_poll:              cq.id=4 requested 16, returned 1
+   kworker/u10:3-516   [001] .L...    78.273835: mr_alloc:             pd.id=2 mr.id=16 type=MEM_REG max_num_sg=512 rc=0
+   kworker/u10:3-516   [001] .L...    78.273842: mr_alloc:             pd.id=2 mr.id=17 type=MEM_REG max_num_sg=512 rc=0
+   kworker/u10:3-516   [001] .L...    78.273847: mr_alloc:             pd.id=2 mr.id=18 type=MEM_REG max_num_sg=512 rc=0
+   kworker/u10:3-516   [001] .L...    78.273852: mr_alloc:             pd.id=2 mr.id=19 type=MEM_REG max_num_sg=512 rc=0
+   kworker/u10:3-516   [001] .L...    78.273862: mr_alloc:             pd.id=2 mr.id=20 type=MEM_REG max_num_sg=512 rc=0
+   kworker/u10:3-516   [001] .L...    78.273869: mr_alloc:             pd.id=2 mr.id=21 type=MEM_REG max_num_sg=512 rc=0
+   kworker/u10:3-516   [001] .L...    78.273874: mr_alloc:             pd.id=2 mr.id=22 type=MEM_REG max_num_sg=512 rc=0
+   kworker/u10:3-516   [001] .L...    78.273880: mr_alloc:             pd.id=2 mr.id=23 type=MEM_REG max_num_sg=512 rc=0
+   kworker/u10:3-516   [001] .L...    78.273885: mr_alloc:             pd.id=2 mr.id=24 type=MEM_REG max_num_sg=512 rc=0
+   kworker/u10:3-516   [001] .L...    78.273891: mr_alloc:             pd.id=2 mr.id=25 type=MEM_REG max_num_sg=512 rc=0
+   kworker/u10:3-516   [001] .L...    78.273896: mr_alloc:             pd.id=2 mr.id=26 type=MEM_REG max_num_sg=512 rc=0
+   kworker/u10:3-516   [001] .L...    78.273901: mr_alloc:             pd.id=2 mr.id=27 type=MEM_REG max_num_sg=512 rc=0
+   kworker/u10:3-516   [001] .L...    78.273907: mr_alloc:             pd.id=2 mr.id=28 type=MEM_REG max_num_sg=512 rc=0
+   kworker/u10:3-516   [001] .L...    78.273919: mr_alloc:             pd.id=2 mr.id=29 type=MEM_REG max_num_sg=512 rc=0
+   kworker/u10:3-516   [001] .L...    78.273925: mr_alloc:             pd.id=2 mr.id=30 type=MEM_REG max_num_sg=512 rc=0
+   kworker/u10:3-516   [001] .L...    78.273930: mr_alloc:             pd.id=2 mr.id=31 type=MEM_REG max_num_sg=512 rc=0
+           cifsd-1610  [000] .....    78.274211: smb3_smbd_connect_done: conn_id=0x1 server=192.168.45.10 addr=192.168.45.10:445
+           cifsd-1610  [000] .....    78.274212: smb3_set_credits:     conn_id=0x1 server=192.168.45.10 current_mid=20 credits=1 credit_change=1 in_flight=0
+     kworker/0:4-589   [000] ...1.    78.274231: smb3_tcon_ref:        TC=00000002 GET Reconn r=2
+     kworker/0:4-589   [000] .....    78.274239: smb3_waitff_credits:  conn_id=0x1 server=192.168.45.10 current_mid=0 credits=0 credit_change=-1 in_flight=1
+     kworker/0:4-589   [000] .....    78.274241: smb3_cmd_enter:       sid=0x0 tid=0x0 cmd=0 mid=0
+   kworker/u10:3-516   [001] d..1.    78.274370: cq_schedule:          cq.id=3
+     ksoftirqd/1-25    [001] ..s..    78.274397: cq_process:           cq.id=3 wake-up took 26 [us] from interrupt
+     ksoftirqd/1-25    [001] ..s..    78.274398: cq_poll:              cq.id=3 requested 16, returned 1
+   kworker/u10:3-516   [001] d..1.    78.274428: cq_schedule:          cq.id=4
+   kworker/u10:3-516   [001] .Ls1.    78.274434: cq_process:           cq.id=4 wake-up took 6 [us] from interrupt
+   kworker/u10:3-516   [001] .Ls1.    78.274435: cq_poll:              cq.id=4 requested 16, returned 1
+           cifsd-1610  [000] .L...    78.274470: smb3_add_credits:     conn_id=0x1 server=192.168.45.10 current_mid=1 credits=1 credit_change=1 in_flight=0
+     kworker/0:4-589   [000] .....    78.274486: smb3_cmd_done:        sid=0x0 tid=0x0 cmd=0 mid=0
+     kworker/0:4-589   [000] .....    78.274501: smb3_waitff_credits:  conn_id=0x1 server=192.168.45.10 current_mid=1 credits=0 credit_change=-1 in_flight=1
+     kworker/0:4-589   [000] .....    78.274502: smb3_cmd_enter:       sid=0x0 tid=0x0 cmd=1 mid=1
+   kworker/u10:3-516   [001] d..1.    78.274748: cq_schedule:          cq.id=3
+   kworker/u10:3-516   [001] dL.1.    78.274759: cq_schedule:          cq.id=4
+   kworker/u10:3-516   [001] .Ls1.    78.274761: cq_process:           cq.id=3 wake-up took 13 [us] from interrupt
+   kworker/u10:3-516   [001] .Ls1.    78.274762: cq_poll:              cq.id=3 requested 16, returned 1
+   kworker/u10:3-516   [001] .Ls1.    78.274767: cq_process:           cq.id=4 wake-up took 8 [us] from interrupt
+   kworker/u10:3-516   [001] .Ls1.    78.274768: cq_poll:              cq.id=4 requested 16, returned 1
+           cifsd-1610  [000] .L...    78.274814: smb3_add_credits:     conn_id=0x1 server=192.168.45.10 current_mid=2 credits=130 credit_change=130 in_flight=0
+     kworker/0:4-589   [000] .....    78.274835: smb3_cmd_err:         sid=0x2 tid=0x0 cmd=1 mid=1 status=0xc0000016 rc=-5
+     kworker/0:4-589   [000] .....    78.274835: smb3_eio:             smb2_received_error info=c0000016,0
+     kworker/0:4-589   [000] .....    78.274857: smb3_waitff_credits:  conn_id=0x1 server=192.168.45.10 current_mid=2 credits=129 credit_change=-1 in_flight=1
+     kworker/0:4-589   [000] .....    78.274858: smb3_cmd_enter:       sid=0x2 tid=0x0 cmd=1 mid=2
+   kworker/u10:2-94    [001] d..1.    78.274977: cq_schedule:          cq.id=3
+     ksoftirqd/1-25    [001] ..s..    78.274995: cq_process:           cq.id=3 wake-up took 18 [us] from interrupt
+     ksoftirqd/1-25    [001] ..s..    78.274996: cq_poll:              cq.id=3 requested 16, returned 1
+   kworker/u10:2-94    [001] d..1.    78.275099: cq_schedule:          cq.id=4
+   kworker/u10:2-94    [001] .Ls1.    78.275108: cq_process:           cq.id=4 wake-up took 8 [us] from interrupt
+   kworker/u10:2-94    [001] .Ls1.    78.275109: cq_poll:              cq.id=4 requested 16, returned 1
+           cifsd-1610  [000] .L...    78.275135: smb3_add_credits:     conn_id=0x1 server=192.168.45.10 current_mid=3 credits=259 credit_change=130 in_flight=0
+     kworker/0:4-589   [000] .....    78.275163: smb3_cmd_done:        sid=0x2 tid=0x0 cmd=1 mid=2
+     kworker/0:4-589   [000] .....    78.275185: smb3_waitff_credits:  conn_id=0x1 server=192.168.45.10 current_mid=3 credits=258 credit_change=-1 in_flight=1
+     kworker/0:4-589   [000] .....    78.275186: smb3_cmd_enter:       sid=0x2 tid=0x0 cmd=3 mid=3
+   kworker/u10:2-94    [001] d..1.    78.275295: cq_schedule:          cq.id=3
+     ksoftirqd/1-25    [001] ..s..    78.275314: cq_process:           cq.id=3 wake-up took 18 [us] from interrupt
+     ksoftirqd/1-25    [001] ..s..    78.275315: cq_poll:              cq.id=3 requested 16, returned 1
+   kworker/u10:2-94    [001] d..1.    78.275378: cq_schedule:          cq.id=4
+   kworker/u10:2-94    [001] .Ls1.    78.275387: cq_process:           cq.id=4 wake-up took 8 [us] from interrupt
+   kworker/u10:2-94    [001] .Ls1.    78.275388: cq_poll:              cq.id=4 requested 16, returned 1
+           cifsd-1610  [000] .L...    78.275413: smb3_add_credits:     conn_id=0x1 server=192.168.45.10 current_mid=4 credits=322 credit_change=64 in_flight=0
+     kworker/0:4-589   [000] .....    78.275446: smb3_cmd_done:        sid=0x2 tid=0x1 cmd=3 mid=3
+     kworker/0:4-589   [000] .....    78.275448: smb3_tcon:            xid=0 sid=0x2 tid=0x0 unc_name=\\192.168.45.10\linux-cifs rc=0
+     kworker/0:4-589   [000] .....    78.275452: smb3_enter:           smb2_reconnect: xid=5
+     kworker/0:4-589   [000] .....    78.275455: smb3_waitff_credits:  conn_id=0x1 server=192.168.45.10 current_mid=4 credits=321 credit_change=-1 in_flight=1
+     kworker/0:4-589   [000] .....    78.275456: smb3_cmd_enter:       sid=0x2 tid=0x1 cmd=11 mid=4
+   kworker/u10:2-94    [001] d..1.    78.275664: cq_schedule:          cq.id=3
+     ksoftirqd/1-25    [001] ..s..    78.275692: cq_process:           cq.id=3 wake-up took 27 [us] from interrupt
+     ksoftirqd/1-25    [001] ..s..    78.275694: cq_poll:              cq.id=3 requested 16, returned 1
+   kworker/u10:2-94    [001] d..1.    78.275891: cq_schedule:          cq.id=4
+   kworker/u10:2-94    [001] .Ls1.    78.275901: cq_process:           cq.id=4 wake-up took 9 [us] from interrupt
+   kworker/u10:2-94    [001] .Ls1.    78.275902: cq_poll:              cq.id=4 requested 16, returned 1
+           cifsd-1610  [000] .L...    78.275936: smb3_add_credits:     conn_id=0x1 server=192.168.45.10 current_mid=5 credits=331 credit_change=10 in_flight=0
+     kworker/0:4-589   [000] .....    78.275961: smb3_cmd_done:        sid=0x2 tid=0x1 cmd=11 mid=4
+     kworker/0:4-589   [000] .....    78.275969: smb3_exit_done:       smb2_reconnect: xid=5
+     kworker/0:4-589   [000] ...2.    78.275972: smb3_tcon_ref:        TC=00000002 PUT Reconn r=1
+     kworker/0:4-589   [000] .....    78.275979: smb3_waitff_credits:  conn_id=0x1 server=192.168.45.10 current_mid=5 credits=330 credit_change=-1 in_flight=1
+     kworker/0:4-589   [000] .....    78.275980: smb3_cmd_enter:       sid=0x2 tid=0x0 cmd=3 mid=5
+   kworker/u10:2-94    [001] d..1.    78.276084: cq_schedule:          cq.id=3
+     ksoftirqd/1-25    [001] ..s..    78.276103: cq_process:           cq.id=3 wake-up took 19 [us] from interrupt
+     ksoftirqd/1-25    [001] ..s..    78.276104: cq_poll:              cq.id=3 requested 16, returned 1
+   kworker/u10:2-94    [001] d..1.    78.276192: cq_schedule:          cq.id=4
+   kworker/u10:2-94    [001] .Ls1.    78.276201: cq_process:           cq.id=4 wake-up took 8 [us] from interrupt
+   kworker/u10:2-94    [001] .Ls1.    78.276202: cq_poll:              cq.id=4 requested 16, returned 1
+           cifsd-1610  [000] .....    78.276230: smb3_add_credits:     conn_id=0x1 server=192.168.45.10 current_mid=6 credits=394 credit_change=64 in_flight=0
+     kworker/0:4-589   [000] .....    78.276256: smb3_cmd_done:        sid=0x2 tid=0x2 cmd=3 mid=5
+     kworker/0:4-589   [000] .....    78.276257: smb3_tcon:            xid=0 sid=0x2 tid=0x0 unc_name=\\192.168.45.10\IPC$ rc=0
+     kworker/0:4-589   [000] .....    78.276259: smb3_enter:           smb2_reconnect: xid=6
+     kworker/0:4-589   [000] .....    78.276260: smb3_exit_done:       smb2_reconnect: xid=6
+     kworker/0:0-9     [000] .....   139.688969: smb3_waitff_credits:  conn_id=0x1 server=192.168.45.10 current_mid=6 credits=0 credit_change=-1 in_flight=1
+     kworker/0:0-9     [000] .....   139.688973: smb3_cmd_enter:       sid=0x0 tid=0x0 cmd=13 mid=6
+   kworker/u10:3-516   [001] d..1.   139.689231: cq_schedule:          cq.id=3
+     ksoftirqd/1-25    [001] ..s..   139.689252: cq_process:           cq.id=3 wake-up took 21 [us] from interrupt
+     ksoftirqd/1-25    [001] ..s..   139.689254: cq_poll:              cq.id=3 requested 16, returned 1
+   kworker/u10:3-516   [001] d..1.   139.689309: cq_schedule:          cq.id=4
+   kworker/u10:3-516   [001] .Ls1.   139.689318: cq_process:           cq.id=4 wake-up took 8 [us] from interrupt
+   kworker/u10:3-516   [001] .Ls1.   139.689318: cq_poll:              cq.id=4 requested 16, returned 1
+           cifsd-1610  [000] .L...   139.689388: smb3_add_credits:     conn_id=0x1 server=192.168.45.10 current_mid=7 credits=1 credit_change=1 in_flight=0
+   kworker/u10:2-94    [001] d..1.   140.595956: cq_schedule:          cq.id=0
+   kworker/u13:1-1608  [001] .....   140.595982: cq_process:           cq.id=0 wake-up took 26 [us] from interrupt
+   kworker/u13:1-1608  [001] .....   140.595983: cq_poll:              cq.id=0 requested 16, returned 1
+   kworker/u13:1-1608  [001] .....   140.595985: ib_mad_recv_done_handler: 0:1 QP1 : RECV WC Status 0 : length 296 : hdr : base_ver 0x01 class 0x07 class_ver 0x02 method 0x03 status 0x0000 class_specific 0x0000 tid 0x00000002fb9e61b9 attr_id 0x0015 attr_mod 0x00000000 slid 0x00000000 src QP1, sl 0
+   kworker/u13:1-1608  [001] .....   140.595987: ib_mad_recv_done_agent: 0:1 mad agent : hi_tid 0x00000002 class 0x07 class_ver 0x02
+     kworker/1:3-246   [001] .....   140.596049: icm_issue_drep:       local_id=3110182651 remote_id=930853330
+     kworker/1:3-246   [001] d..1.   140.596051: ib_mad_ib_send_mad:   0:1 QP1 agent 0xffff88ff802ea200: wrtid 0x2fb9e61b9; 0/0 retries(0); timeout 0 length 256 : hdr : base_ver 0x1 class 0x7 class_ver 0x2 method 0x3 status 0x0 class_specific 0x0 tid 0x2fb9e61b9 attr_id 0x16 attr_mod 0x0  => dlid 0x00000000 sl 0 rpqn 0x1 rqpkey 0x80000000
+     kworker/1:3-246   [001] .....   140.596058: icm_no_priv_err:      local_id=3110182651 remote_id=930853330
+   kworker/u10:2-94    [001] d..1.   140.596124: cq_schedule:          cq.id=0
+   kworker/u13:1-1608  [001] .....   140.596147: cq_process:           cq.id=0 wake-up took 22 [us] from interrupt
+   kworker/u13:1-1608  [001] .....   140.596147: cq_poll:              cq.id=0 requested 16, returned 1
+   kworker/u13:1-1608  [001] .....   140.596148: ib_mad_send_done_agent: 0:1 mad agent : hi_tid 0x00000002 class 0x07 class_ver 0x02
+   kworker/u13:1-1608  [001] .....   140.596149: ib_mad_send_done_handler: 0:1 QP1 : SEND WC Status 0 : agent 0xffff88ff802ea200: wrtid 0x2fb9e61b9 0/0 retries(0) timeout 0 length 256: hdr : base_ver 0x1 class 0x7 class_ver 0x2 method 0x3 status 0x0
+     kworker/0:0-9     [000] .....   201.128469: smb3_waitff_credits:  conn_id=0x1 server=192.168.45.10 current_mid=7 credits=0 credit_change=-1 in_flight=1
+     kworker/0:0-9     [000] .....   201.128473: smb3_cmd_enter:       sid=0x0 tid=0x0 cmd=13 mid=7
+   kworker/u10:3-516   [001] d..1.   201.128751: cq_schedule:          cq.id=3
+   kworker/u10:3-516   [001] .Ls1.   201.128801: cq_process:           cq.id=3 wake-up took 49 [us] from interrupt
+   kworker/u10:3-516   [001] .Ls1.   201.128803: cq_poll:              cq.id=3 requested 16, returned 1
+   kworker/u10:3-516   [001] dL.1.   201.128819: cq_schedule:          cq.id=4
+   kworker/u10:3-516   [001] .Ls1.   201.128823: cq_process:           cq.id=4 wake-up took 3 [us] from interrupt
+   kworker/u10:3-516   [001] .Ls1.   201.128823: cq_poll:              cq.id=4 requested 16, returned 1
+           cifsd-1610  [000] .L...   201.128883: smb3_add_credits:     conn_id=0x1 server=192.168.45.10 current_mid=8 credits=1 credit_change=1 in_flight=0
+     kworker/0:0-9     [000] .....   262.568107: smb3_waitff_credits:  conn_id=0x1 server=192.168.45.10 current_mid=8 credits=0 credit_change=-1 in_flight=1
+     kworker/0:0-9     [000] .....   262.568111: smb3_cmd_enter:       sid=0x0 tid=0x0 cmd=13 mid=8
+   kworker/u10:3-516   [001] d..1.   262.568543: cq_schedule:          cq.id=3
+     ksoftirqd/1-25    [001] ..s..   262.568565: cq_process:           cq.id=3 wake-up took 22 [us] from interrupt
+     ksoftirqd/1-25    [001] ..s..   262.568567: cq_poll:              cq.id=3 requested 16, returned 1
+   kworker/u10:3-516   [001] d..1.   262.568626: cq_schedule:          cq.id=4
+   kworker/u10:3-516   [001] .Ls1.   262.568637: cq_process:           cq.id=4 wake-up took 10 [us] from interrupt
+   kworker/u10:3-516   [001] .Ls1.   262.568638: cq_poll:              cq.id=4 requested 16, returned 1
+           cifsd-1610  [000] .....   262.568708: smb3_add_credits:     conn_id=0x1 server=192.168.45.10 current_mid=9 credits=1 credit_change=1 in_flight=0

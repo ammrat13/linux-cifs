@@ -1,0 +1,12 @@
+---
+
+- name: Install trace-cmd
+  ansible.builtin.apt:
+    name:
+      - trace-cmd
+
+- name: Enable event logging for RDMA events
+  ansible.builtin.copy:
+    src: z-cifs.conf
+    dest: /etc/modprobe.d/
+    mode: "0644"

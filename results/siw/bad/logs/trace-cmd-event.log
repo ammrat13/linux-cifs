@@ -1,0 +1,46 @@
+cpus=2
+     kworker/0:2-147   [000] .....    98.879163: smb3_waitff_credits:  conn_id=0x1 server=192.168.45.10 current_mid=20 credits=0 credit_change=-1 in_flight=1
+     kworker/0:2-147   [000] .....    98.879167: smb3_cmd_enter:       sid=0x0 tid=0x0 cmd=13 mid=20
+        siw_tx/1-1038  [001] .....    98.879260: cq_schedule:          cq.id=0
+     ksoftirqd/1-25    [001] ..s1.    98.879294: cq_process:           cq.id=0 wake-up took 33 [us] from interrupt
+     ksoftirqd/1-25    [001] ..s1.    98.879297: cq_poll:              cq.id=0 requested 16, returned 1
+          <idle>-0     [000] ..s3.    98.879482: cq_schedule:          cq.id=1
+          <idle>-0     [000] ..s1.    98.879488: cq_process:           cq.id=1 wake-up took 6 [us] from interrupt
+          <idle>-0     [000] ..s1.    98.879490: cq_poll:              cq.id=1 requested 16, returned 1
+           cifsd-1596  [001] .L...    98.879542: smb3_add_credits:     conn_id=0x1 server=192.168.45.10 current_mid=21 credits=1 credit_change=1 in_flight=0
+     kworker/1:4-151   [001] .....   160.317314: smb3_waitff_credits:  conn_id=0x1 server=192.168.45.10 current_mid=21 credits=0 credit_change=-1 in_flight=1
+     kworker/1:4-151   [001] .....   160.317318: smb3_cmd_enter:       sid=0x0 tid=0x0 cmd=13 mid=21
+        siw_tx/1-1038  [001] .....   160.317470: cq_schedule:          cq.id=0
+     ksoftirqd/1-25    [001] ..s..   160.317527: cq_process:           cq.id=0 wake-up took 27 [us] from interrupt
+     ksoftirqd/1-25    [001] ..s..   160.317529: cq_poll:              cq.id=0 requested 16, returned 1
+          <idle>-0     [000] ..s3.   160.317679: cq_schedule:          cq.id=1
+          <idle>-0     [000] ..s1.   160.317703: cq_process:           cq.id=1 wake-up took 23 [us] from interrupt
+          <idle>-0     [000] ..s1.   160.317704: cq_poll:              cq.id=1 requested 16, returned 1
+           cifsd-1596  [001] .L...   160.317773: smb3_add_credits:     conn_id=0x1 server=192.168.45.10 current_mid=22 credits=1 credit_change=1 in_flight=0
+     kworker/0:2-147   [000] .....   221.754396: smb3_waitff_credits:  conn_id=0x1 server=192.168.45.10 current_mid=22 credits=0 credit_change=-1 in_flight=1
+     kworker/0:2-147   [000] .....   221.754399: smb3_cmd_enter:       sid=0x0 tid=0x0 cmd=13 mid=22
+        siw_tx/1-1038  [001] .....   221.754500: cq_schedule:          cq.id=0
+     ksoftirqd/1-25    [001] ..s..   221.754520: cq_process:           cq.id=0 wake-up took 19 [us] from interrupt
+     ksoftirqd/1-25    [001] ..s..   221.754522: cq_poll:              cq.id=0 requested 16, returned 1
+          <idle>-0     [000] ..s3.   221.754816: cq_schedule:          cq.id=1
+          <idle>-0     [000] ..s1.   221.754822: cq_process:           cq.id=1 wake-up took 4 [us] from interrupt
+          <idle>-0     [000] ..s1.   221.754823: cq_poll:              cq.id=1 requested 16, returned 1
+           cifsd-1596  [001] .L...   221.754872: smb3_add_credits:     conn_id=0x1 server=192.168.45.10 current_mid=23 credits=1 credit_change=1 in_flight=0
+     kworker/0:2-147   [000] .....   283.193881: smb3_waitff_credits:  conn_id=0x1 server=192.168.45.10 current_mid=23 credits=0 credit_change=-1 in_flight=1
+     kworker/0:2-147   [000] .....   283.193885: smb3_cmd_enter:       sid=0x0 tid=0x0 cmd=13 mid=23
+        siw_tx/1-1038  [001] .....   283.194000: cq_schedule:          cq.id=0
+     ksoftirqd/1-25    [001] ..s..   283.194020: cq_process:           cq.id=0 wake-up took 19 [us] from interrupt
+     ksoftirqd/1-25    [001] ..s..   283.194022: cq_poll:              cq.id=0 requested 16, returned 1
+          <idle>-0     [000] ..s3.   283.194259: cq_schedule:          cq.id=1
+          <idle>-0     [000] ..s1.   283.194287: cq_process:           cq.id=1 wake-up took 27 [us] from interrupt
+          <idle>-0     [000] ..s1.   283.194288: cq_poll:              cq.id=1 requested 16, returned 1
+           cifsd-1596  [001] .L...   283.194344: smb3_add_credits:     conn_id=0x1 server=192.168.45.10 current_mid=24 credits=1 credit_change=1 in_flight=0
+     kworker/0:2-147   [000] .....   344.633923: smb3_waitff_credits:  conn_id=0x1 server=192.168.45.10 current_mid=24 credits=0 credit_change=-1 in_flight=1
+     kworker/0:2-147   [000] .....   344.633926: smb3_cmd_enter:       sid=0x0 tid=0x0 cmd=13 mid=24
+        siw_tx/1-1038  [001] .....   344.634045: cq_schedule:          cq.id=0
+     ksoftirqd/1-25    [001] ..s1.   344.634081: cq_process:           cq.id=0 wake-up took 35 [us] from interrupt
+     ksoftirqd/1-25    [001] ..s1.   344.634083: cq_poll:              cq.id=0 requested 16, returned 1
+          <idle>-0     [000] ..s3.   344.634322: cq_schedule:          cq.id=1
+          <idle>-0     [000] ..s1.   344.634327: cq_process:           cq.id=1 wake-up took 4 [us] from interrupt
+          <idle>-0     [000] ..s1.   344.634328: cq_poll:              cq.id=1 requested 16, returned 1
+           cifsd-1596  [001] .L...   344.634390: smb3_add_credits:     conn_id=0x1 server=192.168.45.10 current_mid=25 credits=1 credit_change=1 in_flight=0

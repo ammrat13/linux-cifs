@@ -1,0 +1,38 @@
+Format: 1.8
+Date: Wed, 09 Sep 2026 04:54:22 +0000
+Source: linux-upstream
+Binary: linux-headers-7.3.0-rc1-cifs linux-image-7.3.0-rc1-cifs linux-image-7.3.0-rc1-cifs-dbg linux-libc-dev
+Built-For-Profiles: derivative.ubuntu noudeb
+Architecture: amd64
+Version: 7.3.0~rc1-00667-g2beb1b31a12b-4
+Distribution: unstable
+Urgency: low
+Maintainer: Ammar Ratnani <ammrat13@gmail.com>
+Changed-By: Ammar Ratnani <ammrat13@gmail.com>
+Description:
+ linux-headers-7.3.0-rc1-cifs - Linux kernel headers for 7.3.0-rc1-cifs on amd64
+ linux-image-7.3.0-rc1-cifs - Linux kernel, version 7.3.0-rc1-cifs
+ linux-image-7.3.0-rc1-cifs-dbg - Linux kernel debugging symbols for 7.3.0-rc1-cifs
+ linux-libc-dev - Linux support headers for userspace development
+Changes:
+ linux-upstream (7.3.0~rc1-00667-g2beb1b31a12b-4) unstable; urgency=low
+ .
+   * Custom built Linux kernel.
+Checksums-Sha1:
+ 01e60d2747e0af16f4582b9a9409aeba15718a26 11425970 linux-headers-7.3.0-rc1-cifs_7.3.0~rc1-00667-g2beb1b31a12b-4_amd64.deb
+ 5de437253ea7fa93be8cbd3ffa165a6f93f0c8aa 1603605986 linux-image-7.3.0-rc1-cifs-dbg_7.3.0~rc1-00667-g2beb1b31a12b-4_amd64.deb
+ ebdb24070481182e5e6afb04ec3b03113a883365 131653556 linux-image-7.3.0-rc1-cifs_7.3.0~rc1-00667-g2beb1b31a12b-4_amd64.deb
+ 3f311d589aa7ac2c2bb3fc8036c4dbccf06f1e57 1570518 linux-libc-dev_7.3.0~rc1-00667-g2beb1b31a12b-4_amd64.deb
+ 7bd51b9f6f242bff0698c448d2fc2d93660de240 8035 linux-upstream_7.3.0~rc1-00667-g2beb1b31a12b-4_amd64.buildinfo
+Checksums-Sha256:
+ 3cd4b33d1178d722519dddd5b1f49ce131ab414fad925b2d32ac49ae0fdb81b7 11425970 linux-headers-7.3.0-rc1-cifs_7.3.0~rc1-00667-g2beb1b31a12b-4_amd64.deb
+ 3302138f28bdc679ea409b98332c3f0f285e9bae621dce5d5dcf3b26cd610848 1603605986 linux-image-7.3.0-rc1-cifs-dbg_7.3.0~rc1-00667-g2beb1b31a12b-4_amd64.deb
+ 1fd3ce2d82b1e7b73e09f21fdff93bf9a9875bab4df37f3362c60782dba2fb1e 131653556 linux-image-7.3.0-rc1-cifs_7.3.0~rc1-00667-g2beb1b31a12b-4_amd64.deb
+ ce070344a6165a455fe35acfeeab727efba24eac80b09c34292e2d73c5fff735 1570518 linux-libc-dev_7.3.0~rc1-00667-g2beb1b31a12b-4_amd64.deb
+ 3e86779b9098ce520eaaabbf0432a068591b0892171e5fa5574cfca18ca8fe41 8035 linux-upstream_7.3.0~rc1-00667-g2beb1b31a12b-4_amd64.buildinfo
+Files:
+ 8598e64fdc5350b0ebe58a01441f3ece 11425970 kernel optional linux-headers-7.3.0-rc1-cifs_7.3.0~rc1-00667-g2beb1b31a12b-4_amd64.deb
+ 856726511d7d833215c9a195cd913ee8 1603605986 debug optional linux-image-7.3.0-rc1-cifs-dbg_7.3.0~rc1-00667-g2beb1b31a12b-4_amd64.deb
+ 561b57482b1ef332b184bd8cd7baea5a 131653556 kernel optional linux-image-7.3.0-rc1-cifs_7.3.0~rc1-00667-g2beb1b31a12b-4_amd64.deb
+ 0caf9c0813c0ee7d7f85ec557899d8d0 1570518 devel optional linux-libc-dev_7.3.0~rc1-00667-g2beb1b31a12b-4_amd64.deb
+ 9879119ec015286ee1c41083829b130a 8035 kernel optional linux-upstream_7.3.0~rc1-00667-g2beb1b31a12b-4_amd64.buildinfo

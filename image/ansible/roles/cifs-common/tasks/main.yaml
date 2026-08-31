@@ -1,0 +1,32 @@
+---
+
+- name: Check RDMA type is valid
+  ansible.builtin.assert:
+    that:
+      - vm_rdma_type is defined
+      - vm_rdma_type in ["rxe", "siw"]
+    fail_msg: "Invalid vm_rdma_type"
+    success_msg: "vm_rdma_type is valid"
+
+- name: Install RDMA packages
+  ansible.builtin.apt:
+    name:
+      - rdma-core
+      - rdmacm-utils
+      - ibverbs-utils
+      - ksmbd-tools
+
+- name: Start RDMA on boot
+  block:
+    - name: Create service
+      ansible.builtin.template:
+        src: linux-cifs-rdma.service.j2
+        dest: /etc/systemd/system/linux-cifs-rdma.service
+        mode: "0644"
+      vars:
+        vm_rdma_interface: "{{ vm_rdma_type }}0"
+    - name: Enable service
+      ansible.builtin.systemd_service:
+        name: linux-cifs-rdma
+        enabled: true
+        daemon_reload: true

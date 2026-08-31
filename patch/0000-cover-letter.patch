@@ -1,0 +1,61 @@
+From 0d22f07ecf415a8db1495d3662117d895b10906b Mon Sep 17 00:00:00 2001
+From: Ammar Ratnani <ammrat13@gmail.com>
+Date: Date: Sun, 6 Sep 2026 15:24:46 -0700
+Subject: [PATCH 0/2] smbdirect: don't hang on netdev reconfiguration
+Cc: Leon Romanovsky <leon@kernel.org>
+Cc: Jason Gunthorpe <jgg@ziepe.ca>
+Cc: Namjae Jeon <linkinjeon@kernel.org>
+Cc: Paulo Alcantara <pc@manguebit.org>
+Cc: Stefan Metzmacher <metze@samba.org>
+Cc: Tom Talpey <tom@talpey.com>
+Cc: linux-rdma@vger.kernel.org
+Cc: linux-cifs@vger.kernel.org
+Cc: samba-technical@lists.samba.org
+Cc: linux-kernel@vger.kernel.org
+Cc: Ammar Ratnani <aratnani@nvidia.com>
+Cc: Kechen Lu <kechenl@nvidia.com>
+Cc: Mithun Maragiri <mmaragiri@nvidia.com>
+
+When I mount a CIFS share using SMB Direct over RoCEv2, I observe a kernel
+thread hang if I "configure" its slave network device by taking its link
+down and bringing it back up. Attempting to just `ls` the mount point in
+this state gives EHOSTDOWN.
+
+I believe the following is the root-cause of the hang: When the link is
+taken down, the corresponding GID Table Entry is marked as pending deletion
+and has its slave ndev set to NULL. All sends on RDMA connections still
+using that GID Table Entry fail at MAD creation. SMB Direct eventually
+detects this and tries to disconnect / reconnect to recover. Unfortunately,
+disconnecting requires successfully sending either a DREQ or a DREP. Since
+neither of them even post, the connection remains in the RDMA_CM_CONNECT
+state, and no callback moves it out. The SMB Direct layer never gets the
+RDMA_CM_EVENT_DISCONNECTED it's waiting for, and hangs.
+
+Fix this in the CMA. If we call `rdma_disconnect` on a connected connection
+and we fail to send both a DREP and a DREQ; disconnect, and thereby send
+the `RDMA_CM_EVENT_DISCONNECTED` event to SMB Direct.
+
+I tested this change in QEMU using RXE. I ran Ubuntu 26.04.1 with a
+mainline kernel. On commit 9f0346dcbea3 ("Merge tag 'driver-core-7.3-rc2'
+of git://git.kernel.org/pub/scm/linux/kernel/git/driver-core/driver-core"),
+I reproduce the hang. With this patch applied, SMB Direct immediately
+disconnects and reconnects when the slave device is brought down then up.
+Listing and reading files from the mount point also work afterwards.
+
+Artifacts for reproducing the hang and testing my fix are available at
+
+    https://github.com/ammrat13/linux-cifs
+
+There, you can find: logs from the "bad" and "good" kernels, the kernel
+configuration, the VMs' configuration, and a playbook to trigger the hang.
+
+Ammar Ratnani (2):
+  infiniband: force disconnect if DREP and DREQ fail
+  infiniband: trace force disconnections
+
+ drivers/infiniband/core/cma.c       | 41 ++++++++++++++++++++++++++---
+ drivers/infiniband/core/cma_trace.h |  1 +
+ 2 files changed, 38 insertions(+), 4 deletions(-)
+
+-- 
+2.55.0

@@ -1,0 +1,58 @@
+From 0d22f07ecf415a8db1495d3662117d895b10906b Mon Sep 17 00:00:00 2001
+From: Ammar Ratnani <ammrat13@gmail.com>
+Date: Sat, 5 Sep 2026 00:17:21 -0700
+Subject: [PATCH 2/2] infiniband: trace force disconnections
+Cc: Ammar Ratnani <aratnani@nvidia.com>
+Cc: Kechen Lu <kechenl@nvidia.com>
+Cc: Mithun Maragiri <mmaragiri@nvidia.com>
+Cc: linux-kernel@vger.kernel.org
+
+When we failed to send both a DREQ and a DREP, we have to infer that by
+noting the absence of the `sent_dreq` and `sent_drep` trace events. It
+would be better if we could see this case by the presence of a trace
+event instead. Implement that.
+
+Cc: Leon Romanovsky <leon@kernel.org>
+Cc: Jason Gunthorpe <jgg@ziepe.ca>
+Cc: Namjae Jeon <linkinjeon@kernel.org>
+Cc: Paulo Alcantara <pc@manguebit.org>
+Cc: Stefan Metzmacher <metze@samba.org>
+Cc: Tom Talpey <tom@talpey.com>
+Cc: linux-rdma@vger.kernel.org
+Cc: linux-cifs@vger.kernel.org
+Cc: samba-technical@lists.samba.org
+Cc: linux-kernel@vger.kernel.org
+Signed-off-by: Ammar Ratnani <ammrat13@gmail.com>
+---
+ drivers/infiniband/core/cma.c       | 2 ++
+ drivers/infiniband/core/cma_trace.h | 1 +
+ 2 files changed, 3 insertions(+)
+
+diff --git a/drivers/infiniband/core/cma.c b/drivers/infiniband/core/cma.c
+index 1f1a8b4e160a..c4eab48a4a9f 100644
+--- a/drivers/infiniband/core/cma.c
++++ b/drivers/infiniband/core/cma.c
+@@ -4834,6 +4834,8 @@ static int cma_force_disconnect(struct rdma_id_private *id_priv)
+ {
+ 	struct cma_work *work;
+ 
++	trace_cm_force_disconnect(id_priv);
++
+ 	work = kzalloc_obj(*work);
+ 	if (!work)
+ 		return -ENOMEM;
+diff --git a/drivers/infiniband/core/cma_trace.h b/drivers/infiniband/core/cma_trace.h
+index 3456d5f3aa47..3d05d8e80856 100644
+--- a/drivers/infiniband/core/cma_trace.h
++++ b/drivers/infiniband/core/cma_trace.h
+@@ -61,6 +61,7 @@ DEFINE_CMA_FSM_EVENT(send_sidr_rep);
+ DEFINE_CMA_FSM_EVENT(disconnect);
+ DEFINE_CMA_FSM_EVENT(sent_drep);
+ DEFINE_CMA_FSM_EVENT(sent_dreq);
++DEFINE_CMA_FSM_EVENT(force_disconnect);
+ DEFINE_CMA_FSM_EVENT(id_destroy);
+ 
+ TRACE_EVENT(cm_id_attach,
+-- 
+2.55.0
+

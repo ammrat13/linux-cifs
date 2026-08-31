@@ -1,0 +1,13 @@
+[global]
+	server string = {{ vm_hostname_prefix }}{{ vm_role }}
+	tcp port = 445
+	server multi channel support = yes
+
+	deadtime = 5
+	ipc timeout = 5
+
+	guest ok = yes
+	restrict anonymous = 0
+
+[{{ server_share }}]
+	path = /var/smb/

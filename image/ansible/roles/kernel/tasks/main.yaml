@@ -1,0 +1,24 @@
+---
+
+- name: Copy kernel packages
+  ansible.builtin.copy:
+    src: "{{ vm_kernel_deb }}/"
+    dest: ~/kernel-deb/
+
+# See: https://github.com/ansible/ansible/issues/79903
+- name: List kernel packages
+  ansible.builtin.find:
+    paths: ~/kernel-deb/
+    patterns:
+      - "*.deb"
+  register: kernel_packages
+
+- name: Fail if no kernel packages
+  ansible.builtin.fail:
+    msg: No kernel packages to install
+  when: kernel_packages.matched == 0
+
+- name: Install kernel packages
+  ansible.builtin.apt:
+    deb: "{{ item }}"
+  loop: "{{ kernel_packages.files | map(attribute='path') }}"
