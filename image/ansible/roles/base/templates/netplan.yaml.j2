@@ -1,0 +1,9 @@
+network:
+  version: 2
+  ethernets:
+    {{ vm_external_interface }}:
+      dhcp4: true
+    {{ vm_internal_interface }}:
+      dhcp4: false
+      addresses:
+        - "{{ vm_internal_address }}"

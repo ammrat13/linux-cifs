@@ -1,0 +1,15 @@
+servers:
+  hosts:
+    linux-cifs-server:
+      ansible_host: "{{ server_internal_address.split('/')[0] }}"
+      ansible_user: '{{ vm_username }}'
+      ansible_ssh_password: '{{ vm_password }}'
+      ansible_become_password: '{{ vm_password }}'
+
+clients:
+  hosts:
+    linux-cifs-client:
+      ansible_host: "{{ client_internal_address.split('/')[0] }}"
+      ansible_user: '{{ vm_username }}'
+      ansible_ssh_password: '{{ vm_password }}'
+      ansible_become_password: '{{ vm_password }}'

@@ -1,0 +1,22 @@
+---
+
+- name: Install RDMA / RXE and KSMBD
+  ansible.builtin.apt:
+    name:
+      - rdma-core
+      - rdmacm-utils
+      - ibverbs-utils
+      - ksmbd-tools
+
+- name: Start RXE on boot
+  block:
+    - name: Create service
+      ansible.builtin.template:
+        src: linux-cifs-rxe.service.j2
+        dest: /etc/systemd/system/linux-cifs-rxe.service
+        mode: "0644"
+    - name: Enable service
+      ansible.builtin.systemd_service:
+        name: linux-cifs-rxe
+        enabled: true
+        daemon_reload: true

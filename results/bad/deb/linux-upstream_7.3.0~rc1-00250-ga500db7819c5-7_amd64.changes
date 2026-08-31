@@ -1,0 +1,38 @@
+Format: 1.8
+Date: Fri, 04 Sep 2026 05:09:28 +0000
+Source: linux-upstream
+Binary: linux-headers-7.3.0-rc1-cifs linux-image-7.3.0-rc1-cifs linux-image-7.3.0-rc1-cifs-dbg linux-libc-dev
+Built-For-Profiles: derivative.ubuntu noudeb
+Architecture: amd64
+Version: 7.3.0~rc1-00250-ga500db7819c5-7
+Distribution: unstable
+Urgency: low
+Maintainer: Ammar Ratnani <ammrat13@gmail.com>
+Changed-By: Ammar Ratnani <ammrat13@gmail.com>
+Description:
+ linux-headers-7.3.0-rc1-cifs - Linux kernel headers for 7.3.0-rc1-cifs on amd64
+ linux-image-7.3.0-rc1-cifs - Linux kernel, version 7.3.0-rc1-cifs
+ linux-image-7.3.0-rc1-cifs-dbg - Linux kernel debugging symbols for 7.3.0-rc1-cifs
+ linux-libc-dev - Linux support headers for userspace development
+Changes:
+ linux-upstream (7.3.0~rc1-00250-ga500db7819c5-7) unstable; urgency=low
+ .
+   * Custom built Linux kernel.
+Checksums-Sha1:
+ 5f9e3425e62aa1296c8b8796fb0a45e451f9ecaf 11426402 linux-headers-7.3.0-rc1-cifs_7.3.0~rc1-00250-ga500db7819c5-7_amd64.deb
+ 9a7ce348bdc8c46f16b917f2f22061b98e9259d6 1603962774 linux-image-7.3.0-rc1-cifs-dbg_7.3.0~rc1-00250-ga500db7819c5-7_amd64.deb
+ 8c4f23bf3a9be642efb4450443533032e9c4e552 131651136 linux-image-7.3.0-rc1-cifs_7.3.0~rc1-00250-ga500db7819c5-7_amd64.deb
+ d1604cdca9d930f2a31c4941baeb9ae526ae0bc7 1570082 linux-libc-dev_7.3.0~rc1-00250-ga500db7819c5-7_amd64.deb
+ ed73fc0bf370d186891803e34fa0ff9152b4580c 8013 linux-upstream_7.3.0~rc1-00250-ga500db7819c5-7_amd64.buildinfo
+Checksums-Sha256:
+ 416186c41228736dd60216742512bfbd5c72ff3089aac3fe17fa2419d08a9996 11426402 linux-headers-7.3.0-rc1-cifs_7.3.0~rc1-00250-ga500db7819c5-7_amd64.deb
+ 8f5caee7b7b15f60d01eb2d1c016bde753bf12dcfadda96928ef08da3edf45a3 1603962774 linux-image-7.3.0-rc1-cifs-dbg_7.3.0~rc1-00250-ga500db7819c5-7_amd64.deb
+ b27eb92c0ffd2de45891778da3a9fb4571101030a83ef877fe519ad4c3a2e7eb 131651136 linux-image-7.3.0-rc1-cifs_7.3.0~rc1-00250-ga500db7819c5-7_amd64.deb
+ 5e0ecdbb5d26dc8bda517c34a8e01d6072271551e9cbe87cb700582d079ad349 1570082 linux-libc-dev_7.3.0~rc1-00250-ga500db7819c5-7_amd64.deb
+ 15923c46a4b8d0dc9cf149d7e3a871f1e598e409d558df9d27357444f1923cc7 8013 linux-upstream_7.3.0~rc1-00250-ga500db7819c5-7_amd64.buildinfo
+Files:
+ a8851add5001e1d4555817381f8fee60 11426402 kernel optional linux-headers-7.3.0-rc1-cifs_7.3.0~rc1-00250-ga500db7819c5-7_amd64.deb
+ fda7840ad1333ffd6b354900bfc6dd61 1603962774 debug optional linux-image-7.3.0-rc1-cifs-dbg_7.3.0~rc1-00250-ga500db7819c5-7_amd64.deb
+ 426ac729396962309b0800adaa85bfa5 131651136 kernel optional linux-image-7.3.0-rc1-cifs_7.3.0~rc1-00250-ga500db7819c5-7_amd64.deb
+ 25f2b686315773cef42df46c6f13ce82 1570082 devel optional linux-libc-dev_7.3.0~rc1-00250-ga500db7819c5-7_amd64.deb
+ cd8a4f355040a7055ce069faaf0032b1 8013 kernel optional linux-upstream_7.3.0~rc1-00250-ga500db7819c5-7_amd64.buildinfo

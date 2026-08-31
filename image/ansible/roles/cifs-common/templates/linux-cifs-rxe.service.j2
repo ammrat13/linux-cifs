@@ -1,0 +1,14 @@
+# See: https://github.com/ManiAm/RDMA-Primer/blob/master/docs/10_README_SOFT_ROCE.md
+
+[Unit]
+Description=Initialize Soft-RoCE Device
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/rdma link add rxe0 type rxe netdev "{{ vm_internal_interface }}"
+RemainAfterExit=yes
+
+[Install]
+WantedBy=multi-user.target

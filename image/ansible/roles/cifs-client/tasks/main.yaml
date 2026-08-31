@@ -1,0 +1,16 @@
+---
+
+- name: Create mount point
+  ansible.builtin.file:
+    path: /mnt/smb/
+    state: directory
+    mode: "0755"
+
+- name: Register mount point
+  ansible.posix.mount:
+    path: /mnt/smb/
+    src: "//{{ server_internal_address.split('/')[0] }}/linux-cifs/"
+    fstype: cifs
+    opts: ro,vers=3.1.1,rdma
+    state: present
+    boot: false

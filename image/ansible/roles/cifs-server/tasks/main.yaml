@@ -1,0 +1,13 @@
+---
+
+- name: Make KSMBD directory
+  ansible.builtin.file:
+    path: /var/smb/
+    state: directory
+    mode: "0755"
+
+- name: Configure KSMBD
+  ansible.builtin.template:
+    src: ksmbd.conf.j2
+    dest: /etc/ksmbd/ksmbd.conf
+    mode: "0644"

@@ -1,0 +1,9 @@
+{
+  "vm_username": "linux-cifs-user",
+
+  "vm_external_interface": "enp16s0",
+  "vm_internal_interface": "enp17s0",
+
+  "server_internal_address": "192.168.45.10/24",
+  "client_internal_address": "192.168.45.20/24"
+}

@@ -1,0 +1,13 @@
+---
+- name: Build Linux-CIFS Image
+  hosts: all
+  become: true
+  roles:
+    - base
+    - kernel
+    - cifs-common
+
+    - role: cifs-server
+      when:  vm_role == 'server'
+    - role: cifs-client
+      when:  vm_role == 'client'

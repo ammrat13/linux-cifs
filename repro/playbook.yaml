@@ -1,0 +1,95 @@
+- name: Reproduce hang
+  hosts: clients
+  become: true
+  tasks:
+    - name: Check required variables exist
+      ansible.builtin.assert:
+        that:
+          - vm_internal_interface is defined
+          - repro_output is defined
+        fail_msg: "Required variables not defined"
+
+    - name: Only run on clean hosts
+      block:
+        - name: Stat the taint file
+          ansible.builtin.stat:
+            path: /taint
+          register: repro_taint
+        - name: Create the taint file
+          ansible.builtin.file:
+            path: /taint
+            state: touch
+        - name: Check the taint file doesn't exist
+          ansible.builtin.fail:
+            msg: "Taint file exists, refusing to run"
+          when: repro_taint.stat.exists
+
+    - name: Create a temporary directory
+      ansible.builtin.tempfile:
+        state: directory
+      register: repro_dir
+
+    - name: Mount the share
+      ansible.builtin.shell: mount /mnt/smb/
+
+    - name: Log GID cache updates
+      ansible.builtin.shell: echo "file cache.c +p" > /sys/kernel/debug/dynamic_debug/control
+
+    - name: Trace the hang
+      block:
+        - name: Run trace-cmd
+          ansible.builtin.shell: >-
+            trace-cmd record --daemonize -q
+            -o '{{ repro_dir.path }}/trace.dat'
+            -p function_graph
+            -g smbdirect_socket_destroy_sync
+            -g smbdirect_socket_cleanup_work
+            -g cm_process_work
+            -g inetaddr_event
+            -g inet6addr_event
+            -g update_gid_event_work_handler
+
+        - name: Restart the network interface
+          ansible.builtin.shell: >-
+            ip link set down {{ vm_internal_interface }}
+            && ip link set up {{ vm_internal_interface }}
+        - name: Wait
+          ansible.builtin.pause:
+            minutes: 5
+
+      always:
+        - name: Stop trace-cmd if it's running
+          ignore_errors: true
+          block:
+            - name: Get trace-cmd PID
+              ansible.builtin.slurp:
+                src: /var/run/trace-cmd-record.pid
+                armor: false
+              register: repro_trace_cmd_pid
+            - name: Kill trace-cmd
+              ansible.builtin.shell: kill -TERM {{ repro_trace_cmd_pid.content }}
+            - name: Wait for trace-cmd to stop
+              ansible.builtin.wait_for:
+                path: /var/run/trace-cmd-record.pid
+                state: absent
+
+    - name: Create reports
+      block:
+        - name: Capture dmesg report
+          ansible.builtin.shell: dmesg > '{{ repro_dir.path }}/dmesg.log'
+          ignore_errors: true
+        - name: Capture trace-cmd report
+          ansible.builtin.shell: >-
+            trace-cmd report -i '{{ repro_dir.path }}/trace.dat'
+            > '{{ repro_dir.path }}/trace-cmd.log'
+          ignore_errors: true
+
+    - name: Fetch reports
+      ansible.builtin.fetch:
+        src: "{{ repro_dir.path }}/{{ item }}"
+        dest: "{{ repro_output }}/{{ item }}"
+        flat: true
+        fail_on_missing: false
+      loop:
+        - dmesg.log
+        - trace-cmd.log

@@ -1,0 +1,9 @@
+# Sensitive variables
+password.json
+
+# Built images
+**/qcow
+
+# IDE files
+/.vscode
+/.zed

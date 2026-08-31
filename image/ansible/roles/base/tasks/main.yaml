@@ -1,0 +1,30 @@
+---
+
+- name: Set hostname
+  ansible.builtin.hostname:
+    name: "linux-cifs-{{ vm_role }}"
+
+- name: Update
+  ansible.builtin.apt:
+    update_cache: yes
+    upgrade: yes
+
+- name: Install QEMU guest agent
+  ansible.builtin.apt:
+    name: qemu-guest-agent
+
+# We have to do this here instead of in autoinstall since packer hasn't
+# attached the final network devices. Because of that autoinstall will fail
+# if we try to configure it there.
+- name: Write netplan
+  ansible.builtin.template:
+    src: netplan.yaml.j2
+    dest: /etc/netplan/99-config.yaml
+    mode: "0644"
+
+# See: https://bugs.launchpad.net/ubuntu/+source/rust-sudo-rs/+bug/2122414
+- name: "Workaround Launchpad #2122414"
+  community.general.alternatives:
+    name: sudo
+    path: /usr/bin/sudo.ws
+    priority: 60

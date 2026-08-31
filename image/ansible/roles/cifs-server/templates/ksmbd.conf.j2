@@ -1,0 +1,17 @@
+[global]
+	server string = linux-cifs-server
+	tcp port = 445
+	server multi channel support = yes
+
+	bind interfaces only = yes
+	interfaces = {{ vm_internal_interface }}
+
+	deadtime = 5
+	ipc timeout = 5
+
+	guest ok = yes
+	restrict anonymous = 0
+
+[linux-cifs]
+	comment = Read-only SMB directory
+	path = /var/smb/
